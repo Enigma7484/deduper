@@ -1,0 +1,26 @@
+name: deduper
+description: "AI-assisted duplicate and similar photo cleaner."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  photo_manager: ^3.9.0
+  image: ^4.8.0
+  image_hashing: ^0.1.1
+  provider: ^6.1.5+1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
