@@ -7,7 +7,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Deduper</string>
+	<string>PhotoCurator AI</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -15,7 +15,11 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>deduper</string>
+	<string>PhotoCurator AI</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>PhotoCurator AI scans your photo library on-device to find duplicates, similar shots, and storage cleanup opportunities.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>PhotoCurator AI needs permission to organize and remove duplicate photos you approve.</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

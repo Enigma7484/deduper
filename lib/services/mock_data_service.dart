@@ -15,7 +15,8 @@ class MockDataService {
           createdAt: now.subtract(const Duration(days: 1)),
           filePath: null,
           perceptualHash: '1010101010101010',
-          qualityScore: 12192768,
+          qualityScore: 94,
+          estimatedBytes: 4200000,
         ),
         PhotoItem(
           id: 'g1_2',
@@ -25,7 +26,8 @@ class MockDataService {
           createdAt: now.subtract(const Duration(days: 1)),
           filePath: null,
           perceptualHash: '1010101010101011',
-          qualityScore: 5595136,
+          qualityScore: 51,
+          estimatedBytes: 1800000,
         ),
         PhotoItem(
           id: 'g1_3',
@@ -35,7 +37,8 @@ class MockDataService {
           createdAt: now.subtract(const Duration(days: 1)),
           filePath: null,
           perceptualHash: '1010101010101111',
-          qualityScore: 2962440,
+          qualityScore: 38,
+          estimatedBytes: 1300000,
         ),
       ]),
       DuplicateGroup([
@@ -47,7 +50,8 @@ class MockDataService {
           createdAt: now.subtract(const Duration(days: 3)),
           filePath: null,
           perceptualHash: '1111000011110000',
-          qualityScore: 12000000,
+          qualityScore: 91,
+          estimatedBytes: 3700000,
         ),
         PhotoItem(
           id: 'g2_2',
@@ -57,7 +61,8 @@ class MockDataService {
           createdAt: now.subtract(const Duration(days: 3)),
           filePath: null,
           perceptualHash: '1111000011110001',
-          qualityScore: 9500000,
+          qualityScore: 62,
+          estimatedBytes: 3400000,
         ),
       ]),
       DuplicateGroup([
@@ -69,7 +74,8 @@ class MockDataService {
           createdAt: now.subtract(const Duration(days: 7)),
           filePath: null,
           perceptualHash: '0000111100001111',
-          qualityScore: 2764800,
+          qualityScore: 46,
+          estimatedBytes: 900000,
         ),
         PhotoItem(
           id: 'g3_2',
@@ -79,7 +85,8 @@ class MockDataService {
           createdAt: now.subtract(const Duration(days: 7)),
           filePath: null,
           perceptualHash: '0000111100001110',
-          qualityScore: 691200,
+          qualityScore: 21,
+          estimatedBytes: 460000,
         ),
       ]),
     ];

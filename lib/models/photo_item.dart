@@ -7,6 +7,7 @@ class PhotoItem {
   final String? filePath;
   final String perceptualHash;
   final double qualityScore;
+  final int estimatedBytes;
 
   const PhotoItem({
     required this.id,
@@ -17,7 +18,15 @@ class PhotoItem {
     required this.filePath,
     required this.perceptualHash,
     required this.qualityScore,
+    this.estimatedBytes = 0,
   });
 
   int get resolution => width * height;
+
+  bool get isScreenshot {
+    final lowerTitle = title.toLowerCase();
+    return lowerTitle.contains('screenshot') ||
+        width / height > 1.9 ||
+        height / width > 1.9;
+  }
 }

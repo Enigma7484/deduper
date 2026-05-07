@@ -17,6 +17,14 @@ class PhotoService {
     return result.isAuth || result.hasAccess;
   }
 
+  Future<void> openSettings() {
+    return PhotoManager.openSetting();
+  }
+
+  Future<void> presentLimitedLibraryPicker() {
+    return PhotoManager.presentLimited(type: RequestType.image);
+  }
+
   Future<List<RawPhotoAsset>> loadRecentImages({int limit = 200}) async {
     final paths = await PhotoManager.getAssetPathList(
       type: RequestType.image,
@@ -49,5 +57,9 @@ class PhotoService {
     }
 
     return output;
+  }
+
+  Future<List<String>> deleteAssetsById(List<String> ids) {
+    return PhotoManager.editor.deleteWithIds(ids);
   }
 }

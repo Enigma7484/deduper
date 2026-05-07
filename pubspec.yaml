@@ -1,5 +1,5 @@
 name: deduper
-description: "AI-assisted duplicate and similar photo cleaner."
+description: "Private on-device duplicate and similar photo cleaner with Pro cleanup workflows."
 publish_to: 'none'
 
 version: 1.0.0+1
