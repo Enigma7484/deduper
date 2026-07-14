@@ -47,4 +47,48 @@ void main() {
     expect(groups.first.best.id, 'a');
     expect(groups.first.reclaimableBytes, 80);
   });
+
+  test('groups transitive matches in the same cleanup set', () {
+    final service = DuplicateService();
+    final groups = service.groupSimilar(
+      const [
+        PhotoItem(
+          id: 'a',
+          title: 'A',
+          width: 100,
+          height: 100,
+          createdAt: null,
+          filePath: null,
+          perceptualHash: '0000000000000000',
+          qualityScore: 10,
+          estimatedBytes: 100,
+        ),
+        PhotoItem(
+          id: 'b',
+          title: 'B',
+          width: 100,
+          height: 100,
+          createdAt: null,
+          filePath: null,
+          perceptualHash: '00000000000000ff',
+          qualityScore: 8,
+          estimatedBytes: 80,
+        ),
+        PhotoItem(
+          id: 'c',
+          title: 'C',
+          width: 100,
+          height: 100,
+          createdAt: null,
+          filePath: null,
+          perceptualHash: '000000000000ffff',
+          qualityScore: 6,
+          estimatedBytes: 60,
+        ),
+      ],
+    );
+
+    expect(groups, hasLength(1));
+    expect(groups.first.items.map((item) => item.id), ['a', 'b', 'c']);
+  });
 }

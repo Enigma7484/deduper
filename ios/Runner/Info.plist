@@ -7,7 +7,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>PhotoCurator AI</string>
+	<string>Curate</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -15,7 +15,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>PhotoCurator AI</string>
+	<string>Curate</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>PhotoCurator AI scans your photo library on-device to find duplicates, similar shots, and storage cleanup opportunities.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>

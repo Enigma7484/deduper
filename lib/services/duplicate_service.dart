@@ -10,30 +10,36 @@ class DuplicateService {
     int threshold = 8,
   }) {
     final groups = <DuplicateGroup>[];
-    final used = <int>{};
+    final visited = <int>{};
 
     for (int i = 0; i < items.length; i++) {
-      if (used.contains(i)) continue;
+      if (visited.contains(i)) continue;
 
-      final currentGroup = <PhotoItem>[items[i]];
-      used.add(i);
+      final component = <int>[];
+      final queue = <int>[i];
+      visited.add(i);
 
-      for (int j = i + 1; j < items.length; j++) {
-        if (used.contains(j)) continue;
+      while (queue.isNotEmpty) {
+        final current = queue.removeLast();
+        component.add(current);
 
-        final dist = _hashService.hammingDistanceBetween(
-          items[i].perceptualHash,
-          items[j].perceptualHash,
-        );
+        for (int j = 0; j < items.length; j++) {
+          if (visited.contains(j)) continue;
 
-        if (dist <= threshold) {
-          currentGroup.add(items[j]);
-          used.add(j);
+          final dist = _hashService.hammingDistanceBetween(
+            items[current].perceptualHash,
+            items[j].perceptualHash,
+          );
+
+          if (dist <= threshold) {
+            visited.add(j);
+            queue.add(j);
+          }
         }
       }
 
-      if (currentGroup.length > 1) {
-        groups.add(DuplicateGroup(currentGroup));
+      if (component.length > 1) {
+        groups.add(DuplicateGroup(component.map((index) => items[index]).toList()));
       }
     }
 
